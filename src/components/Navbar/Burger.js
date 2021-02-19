@@ -32,10 +32,18 @@ const BurgerStyled = styled.div`
     background-color: black;
     height: 0.14rem;
     width: 2rem;
-    transform-origin: 1;
-
+    transform-origin: 1px;
+    transition: all 0.2s ease-in-out;
     :nth-child(1) {
       transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
+    }
+    :nth-child(3) {
+      transform: ${({ isOpen }) => (isOpen ? "rotate(-45deg)" : "rotate(0)")};
+    }
+    :nth-child(2) {
+      /* transform: ${({ isOpen }) =>
+        isOpen ? "translateX(100%)" : "translateX(0)"}; */
+      opacity: ${({ isOpen }) => (isOpen ? "0" : "1")};
     }
   }
   @media (min-width: 768px) {
