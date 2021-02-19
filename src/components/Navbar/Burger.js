@@ -33,7 +33,7 @@ const BurgerStyled = styled.div`
     height: 0.14rem;
     width: 2rem;
     transform-origin: 1px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s linear;
     :nth-child(1) {
       transform: ${({ isOpen }) => (isOpen ? "rotate(45deg)" : "rotate(0)")};
     }
