@@ -1,13 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+:root {
+  --primary-color: #0083ff;
+  --secondary-color: #355389;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "DM Sans", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Serif Display", serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.text-underline-warning {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(245, 192, 112, 0.4))
+  );
+  background-image: -o-linear-gradient(left, rgba(245, 192, 112, 0.4));
+  background-image: linear-gradient(to right, rgba(245, 192, 112, 0.4));
 }
