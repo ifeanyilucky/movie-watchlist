@@ -7,18 +7,23 @@ const Navdata = ({ isOpen }) => {
     <div className="container mt-4">
       <Ul isOpen={isOpen}>
         <li>
-          <Link href="/" className="a">
+          <Link to="/" className="a text-muted">
             Home
           </Link>
         </li>
         <li>
-          <Link href="/watchlist" className="a">
+          <Link to="/watchlist" className="a text-muted">
             Watchlist
           </Link>
         </li>
         <li>
-          <Link href="/watched" className="a">
+          <Link to="/watched" className="a text-muted">
             Watched
+          </Link>
+        </li>
+        <li style={{ marginLeft: "5rem" }}>
+          <Link to="/add">
+            <button className="btn__primary">Add</button>
           </Link>
         </li>
       </Ul>
@@ -31,26 +36,29 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-
+  vertical-align: middle;
+  align-items: baseline;
   li {
     .a {
       text-decoration: none;
       margin-left: 1.4rem;
 
-      color: var(--primary-color);
       transition: border-bottom 0.3s ease-in-out;
       padding-bottom: 8px;
       transition: 0.34s all;
+
       &:hover {
-        color: var(--secondary-color);
+        color: var(--secondary-color) !important;
       }
     }
   }
 
   @media (max-width: 768px) {
-    transform: ${({ isOpen }) =>
-      isOpen ? "translateX(100%)" : "translateX(0)"};
+    /* transform: ${({ isOpen }) =>
+      isOpen ? "translateX(100%)" : "translateX(0)"}; */
+    display: none;
     transition: all 0.3s linear;
+
     flex-flow: column nowrap;
     position: fixed;
     top: 0;

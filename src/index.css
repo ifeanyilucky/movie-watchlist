@@ -41,3 +41,17 @@ code {
     font-size: 1rem;
   }
 }
+
+.btn__primary {
+  background-color: var(--primary-color);
+  border-radius: 30px;
+  padding: 4px 22px;
+  outline: none;
+  border: none;
+  color: white;
+  box-shadow: 1px 6px 4px rgba(0, 116, 194, 0.1);
+  transition: all 0.3s linear;
+}
+.btn__primary:hover {
+  background-color: var(--secondary-color);
+}

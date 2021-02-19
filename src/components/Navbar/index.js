@@ -4,8 +4,9 @@ import styled from "styled-components";
 const Index = () => {
   return (
     <div>
-      <Nav></Nav>
-      <Burger />
+      <Nav>
+        <Burger />
+      </Nav>
     </div>
   );
 };
