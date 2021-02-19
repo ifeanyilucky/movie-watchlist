@@ -1,8 +1,21 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import tvIllustration from "../asset/tv.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  const key = "7ef167d99d70738bc660fac277664bb9";
+  const [results, setResults] = useState([]);
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1
+  `)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!data.error) {
+        setResults(data.results);
+      } else {
+        setResults([]);
+      }
+    });
   return (
     <div className="container">
       <Hero>
@@ -12,7 +25,7 @@ const Home = () => {
             className="text-underline-warning"
           >
             Add Movies
-          </span>{" "}
+          </span>
           <br />
           <span style={{ color: "var(--secondary-color)" }}>
             to your watchlist with Ease
@@ -39,11 +52,22 @@ const Home = () => {
           <img src={tvIllustration} className="w-75" alt="Tv Illustration" />
         </div>
       </Hero>
+      <PopularMovie>
+        <div className="row">
+          {results.map((result) => (
+            <h2>{result.title}</h2>
+          ))}
+          <div className="col-sm-3"></div>
+        </div>
+      </PopularMovie>
     </div>
   );
 };
 
 export default Home;
+const PopularMovie = styled.div`
+  text-align: center;
+`;
 const Hero = styled.div`
   .heroImg {
     display: flex;
