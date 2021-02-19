@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Index from "./components/Navbar";
 import Watched from "./components/Watched";
 import WatchList from "./components/WatchList";
 import Add from "./components/Add";
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <GlobalProvider>
       <Router>
-        <Header />
+        <Index />
         <Switch>
           {/* <Route path="/" exact component={Home} /> */}
           <Route path="/" exact component={Home} />

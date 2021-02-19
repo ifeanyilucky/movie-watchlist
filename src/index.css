@@ -3,6 +3,9 @@
 :root {
   --primary-color: #0083ff;
   --secondary-color: #355389;
+  --font-sm: 1rem;
+  --font-md: 2.5rem;
+  --font-lg: 4rem;
 }
 
 body {
@@ -22,13 +25,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.text-underline-warning {
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(245, 192, 112, 0.4))
-  );
-  background-image: -o-linear-gradient(left, rgba(245, 192, 112, 0.4));
-  background-image: linear-gradient(to right, rgba(245, 192, 112, 0.4));
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
+}
+
+@media only screen and (max-width: 320px) {
+  h1 {
+    font-size: 1rem;
+  }
 }

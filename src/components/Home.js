@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import tvIllustration from "../asset/tv.png";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -17,14 +18,22 @@ const Home = () => {
             to your watchlist with Ease
           </span>
         </h1>
-        <div className="mx-auto col-4 text-center">
+        <div className="mx-auto col-4 text-center mt-3">
           <p className="text-muted">
             Search for movies and easily add them to your watchlist, and also
             your watched-list
           </p>
         </div>
         <div className="herobtn__wrapper">
-          <button className="heroBtn">Get started</button>
+          <Link to="/add">
+            <button className="heroBtn">
+              <span className="icon__wrapper">
+                <i className="fas fa-video"></i>
+              </span>{" "}
+              <span style={{ padding: "8px 35px" }}>Get started </span>
+              <i className="fas fa-chevron-right"></i>
+            </button>
+          </Link>
         </div>
         <div className="heroImg">
           <img src={tvIllustration} className="w-75" alt="Tv Illustration" />
@@ -52,8 +61,28 @@ const Hero = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
     .heroBtn {
       background-color: var(--primary-color);
+      padding: 10px 0;
+      text-align: left;
+      outline: none;
+      border: 1px solid var(--primary-color);
+      border-radius: 30px;
+      color: white;
+      padding-left: 3px;
+      padding-right: 13px;
+      transition: all 0.6s;
+      .icon__wrapper {
+        background-color: white;
+        padding: 9px 10px;
+        border-radius: 50%;
+        color: var(--primary-color);
+      }
+      &:hover {
+        background-color: var(--secondary-color);
+      }
     }
   }
 `;
