@@ -9,6 +9,11 @@
   --font-x-md: 1.667em;
   --font-x-lg: 3.275em;
 }
+
+@font-face {
+  font-family: "Bubbleboy";
+  src: local("Bubbleboy"), url("./asset/fonts/BUBBLEBO.TTF") format("truetype");
+}
 *,
 *::before,
 *::after {
