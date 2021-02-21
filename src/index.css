@@ -1,16 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url("./lib/bootstrap/css/bootstrap.min.css");
 :root {
   --primary-color: #0083ff;
   --secondary-color: #355389;
-  --font-sm: 1rem;
-  --font-md: 2.5rem;
-  --font-lg: 4rem;
+  --font-sm: 0.875em;
+  --font-md: 1.124em;
+  --font-x-md: 1.667em;
+  --font-x-lg: 3.275em;
 }
-
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 h1,
 h2,
@@ -21,6 +29,9 @@ h6 {
   font-family: "DM Serif Display", serif;
 }
 
+p {
+  font-weight: 300;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -54,4 +65,8 @@ code {
 }
 .btn__primary:hover {
   background-color: var(--secondary-color);
+}
+.bubbleboy {
+  font-family: Bubbleboy;
+  text-transform: lowercase;
 }

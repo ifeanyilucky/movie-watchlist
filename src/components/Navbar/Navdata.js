@@ -1,33 +1,23 @@
-import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import styled from "styled-components";
 const Navdata = ({ isOpen }) => {
   return (
-    <div className="container mt-4">
-      <Ul isOpen={isOpen}>
-        <li>
-          <Link to="/" className="a text-muted">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/watchlist" className="a text-muted">
-            Watchlist
-          </Link>
-        </li>
-        <li>
-          <Link to="/watched" className="a text-muted">
-            Watched
-          </Link>
-        </li>
-        <li style={{ marginLeft: "5rem" }}>
-          <Link to="/add">
-            <button className="btn__primary">Add</button>
-          </Link>
-        </li>
-      </Ul>
-    </div>
+    <Ul isOpen={!isOpen}>
+      <li>
+        <Link to="/">Home</Link>
+      </li>
+      <li>
+        <Link to="/watchlist">Watchlist</Link>
+      </li>
+      <li>
+        <Link to="/watched">watched</Link>
+      </li>
+      <li>
+        <button className="btn__primary text-center ml-5">
+          <Link to="/add">Add</Link>
+        </button>
+      </li>
+    </Ul>
   );
 };
 
@@ -35,53 +25,52 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-end;
-  vertical-align: middle;
-  align-items: baseline;
+  justify-content: space-around;
+  align-items: flex-end;
+
   li {
-    .a {
+    a {
       text-decoration: none;
       margin-left: 1.4rem;
-
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
       transition: border-bottom 0.3s ease-in-out;
       padding-bottom: 8px;
       transition: 0.34s all;
-
       &:hover {
-        color: var(--secondary-color) !important;
+        color: rgba(0, 0, 0, 0.7);
+        color: #fff;
       }
     }
   }
 
   @media (max-width: 768px) {
-    /* transform: ${({ isOpen }) =>
-      isOpen ? "translateX(100%)" : "translateX(0)"}; */
-    display: none;
     transition: all 0.3s linear;
-
+    transform: ${({ isOpen }) =>
+      isOpen ? "translateX(100%)" : "translateX(0)"};
     flex-flow: column nowrap;
     position: fixed;
-    top: 0;
-    right: 15px;
+
     text-align: left;
-    margin: auto;
+    margin: 0;
     justify-content: center;
     align-items: center;
     vertical-align: middle;
     overflow: hidden;
-    /* background-color: black; */
+    background-color: black;
     width: 100%;
     height: 100vh;
+    background-attachment: cover;
     z-index: 10;
-    cursor: pointer;
 
     li {
       display: block;
-      .a {
+      a {
         text-decoration: none;
         font-size: 50px;
         text-transform: capitalize;
-        color: var(--primary-color);
+        color: white;
       }
     }
   }
