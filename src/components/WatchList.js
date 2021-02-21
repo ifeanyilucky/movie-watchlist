@@ -7,7 +7,7 @@ const WatchList = () => {
   const { watchlist } = useContext(GlobalContext);
   return (
     <div className="container">
-      <h1>Watchlist</h1>
+      <h3 className="bubbleboy">Watchlist</h3>
       {watchlist.length > 0 ? (
         <div>
           {watchlist.map((movie) => (

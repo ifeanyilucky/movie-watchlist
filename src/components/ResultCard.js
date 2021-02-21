@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { GlobalContext } from "../context/GlobalState";
+import { Link } from "react-router-dom";
 
 export const ResultCard = ({ movie }) => {
   const { addMovieToWatchList, watchlist } = useContext(GlobalContext);
@@ -42,7 +43,11 @@ const Resultcard = styled.div`
   display: flex;
   flex-flow: row;
   margin-bottom: 20px;
+  align-items: center;
+
   .poster_img {
     border-radius: 10px;
+  }
+  .controls {
   }
 `;

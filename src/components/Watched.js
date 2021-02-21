@@ -6,7 +6,7 @@ const Watched = () => {
   const { watched } = useContext(GlobalContext);
   return (
     <div className="container">
-      <h1>Watched</h1>
+      <h3 className="bubbleboy">Watched</h3>
       {watched.length > 0 ? (
         <div>
           {watched.map((movie) => (
