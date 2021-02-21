@@ -6,7 +6,7 @@ import { MovieCard } from "./MovieCard";
 const WatchList = () => {
   const { watchlist } = useContext(GlobalContext);
   return (
-    <div className="container">
+    <div className="container mt-5">
       <h3 className="bubbleboy">Watchlist</h3>
       {watchlist.length > 0 ? (
         <div>
