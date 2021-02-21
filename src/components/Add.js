@@ -39,6 +39,9 @@ const Add = () => {
       <div style={{ marginTop: "2rem" }}>
         {results.length > 0 && (
           <div>
+            <p className="text-center text-muted mb-4">
+              Number of movies found: {results.length}
+            </p>
             <ul>
               {results.map((movie) => (
                 <li key={movie.id} style={{ listStyle: "none" }}>

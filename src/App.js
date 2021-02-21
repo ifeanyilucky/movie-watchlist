@@ -104,7 +104,7 @@ const HomeStyle = styled.div`
 
         .icon__wrapper {
           background-color: white;
-          padding: 10px 10px;
+          padding: 9px 11px;
           border-radius: 50%;
           color: var(--primary-color);
           &:hover {
