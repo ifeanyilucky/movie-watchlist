@@ -37,7 +37,8 @@ const BurgerStyled = styled.div`
     display: none;
   }
   div {
-    background-color: ${({ isOpen }) => (isOpen ? "#fff" : "#fff")};
+    background-color: ${({ isOpen }) =>
+      isOpen ? "#fff" : "var(--primary-color)"};
     width: 2rem;
     height: 0.14rem;
     transform-origin: 1px;

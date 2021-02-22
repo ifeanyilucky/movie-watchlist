@@ -7,17 +7,31 @@ const Navbar = () => {
     <Nav>
       <div className="HeroLogo">
         <Link to="/" className="a">
-          <h1>Msearch</h1>
+          <h1>Mlist</h1>
         </Link>
       </div>
 
       <Burger />
+      <button className="btn__primary text-center ml-5">
+        <Link to="/add" className="a">
+          add <i className="far fa fa-plus-circle" />
+        </Link>
+      </button>
     </Nav>
   );
 };
 
 const Nav = styled.nav`
-  background-color: #000;
+  button {
+    .a {
+      text-decoration: none;
+      color: white;
+    }
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  background-color: transparent;
   width: 100%;
   height: 70px;
   padding: 0 20px;
@@ -30,7 +44,7 @@ const Nav = styled.nav`
 
   .HeroLogo {
     h1 {
-      color: white;
+      color: var(--primary-color);
       font-family: bubbleboy;
     }
     .a {

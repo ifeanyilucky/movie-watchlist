@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("./lib/bootstrap/css/bootstrap.min.css");
 :root {
-  --primary-color: #0083ff;
-  --secondary-color: #355389;
+  --primary-color: #e18f51;
+  --secondary-color: #282b25;
+  --tertiary-color: #40888d;
   --font-sm: 0.875em;
   --font-md: 1.124em;
   --font-x-md: 1.667em;
@@ -14,6 +15,11 @@
   font-family: "Bubbleboy";
   src: local("Bubbleboy"), url("./asset/fonts/BUBBLEBO.TTF") format("truetype");
 }
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("./asset/fonts/Montserrat-Regular.otf") format("opentype");
+}
 *,
 *::before,
 *::after {
@@ -23,7 +29,7 @@
 }
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat";
 }
 h1,
 h2,
@@ -59,19 +65,25 @@ code {
 }
 
 .btn__primary {
-  background-color: var(--primary-color);
-  border-radius: 30px;
-  padding: 4px 22px;
+  background-color: var(--tertiary-color);
+  border-radius: 10px;
+  padding: 5px 25px;
   outline: none;
   border: none;
   color: white;
   box-shadow: 1px 6px 4px rgba(0, 116, 194, 0.1);
   transition: all 0.3s linear;
+  font-weight: 300;
+  outline: none !important;
 }
 .btn__primary:hover {
-  background-color: var(--secondary-color);
+  background-color: rgba(0, 116, 194, 0.8);
 }
 .bubbleboy {
   font-family: Bubbleboy;
   text-transform: lowercase;
+  color: var(--tertiary-color);
+}
+highlight {
+  background-color: rgba(0, 116, 194, 0.1);
 }

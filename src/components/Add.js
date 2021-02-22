@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ResultCard } from "./ResultCard";
+import { apiKey, searchApi } from "../config";
 const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
   const onChange = (e) => {
     e.preventDefault();
     setQuery(e.target.value);
-    //API KEY
-    const tmdbApiKey = "7ef167d99d70738bc660fac277664bb9";
 
-    //TMDB SEARCH API URL
-    const uri = `https://api.themoviedb.org/3/search/movie?api_key=${tmdbApiKey}&language=en-US&page=1&include_adult=false&query=${e.target.value}`;
-
-    fetch(uri)
+    fetch(searchApi + `${e.target.value}`)
       .then((res) => res.json())
       .then((data) => {
         if (!data.errors) {
@@ -25,17 +22,18 @@ const Add = () => {
   };
 
   return (
-    <div className="container">
-      <div className="col-9 mx-auto mt-5">
-        <form>
-          <Search
+    <div className="container pt-5">
+      <Search className="col-10 mx-auto mt-5">
+        <form className="input__wrapper">
+          <i className="far fa fa-search" style={{ color: "#b3c5cd" }} />
+          <input
             type="text"
             placeholder="Search for movie..."
             value={query}
             onChange={onChange}
           />
         </form>
-      </div>
+      </Search>
       <div style={{ marginTop: "2rem" }}>
         {results.length > 0 && (
           <div>
@@ -55,12 +53,27 @@ const Add = () => {
     </div>
   );
 };
-const Search = styled.input`
-  background-color: #f9f9f9;
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 30px;
-  outline: none !important;
-  border: 2px solid black;
+const Search = styled.div`
+  input {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  input::placeholder {
+    color: #b3c5cd;
+  }
+  .input__wrapper {
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: #eef3f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding-left: 16px;
+  }
 `;
 export default Add;

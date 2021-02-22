@@ -12,11 +12,6 @@ const Navdata = ({ isOpen }) => {
       <li>
         <Link to="/watched">watched</Link>
       </li>
-      <li>
-        <button className="btn__primary text-center ml-5">
-          <Link to="/add">Add</Link>
-        </button>
-      </li>
     </Ul>
   );
 };
@@ -34,13 +29,15 @@ const Ul = styled.ul`
       margin-left: 1.4rem;
       font-size: 15px;
       font-weight: 600;
-      color: white;
+      color: #808080;
+      font-weight: 300;
       transition: border-bottom 0.3s ease-in-out;
       padding-bottom: 8px;
       transition: 0.34s all;
+      text-transform: lowercase;
       &:hover {
         color: rgba(0, 0, 0, 0.7);
-        color: #fff;
+        color: #282b25;
       }
     }
   }

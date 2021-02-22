@@ -23,14 +23,19 @@ export const GlobalProvider = ({ children }) => {
   const addMovieToWatchList = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_WATCHLIST", payload: movie });
   };
+
+  //LOCAL STORAGE
   useEffect(() => {
     localStorage.setItem("watchlist", JSON.stringify(state.watchlist));
     localStorage.setItem("watched", JSON.stringify(state.watched));
   }, [state]);
 
+  //REMOVE MOVIE FROM WATCHLIST
   const removeMovieFromWatchlist = (id) => {
     dispatch({ type: "REMOVE_MOVIE_FROM_WATCHLIST", payload: id });
   };
+
+  //ADD MOVIE TO WATCHLIST
   const addMovieToWatched = (movie) => {
     dispatch({ type: "ADD_MOVIE_TO_WATCHED", payload: movie });
   };
