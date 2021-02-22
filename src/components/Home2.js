@@ -2,6 +2,8 @@ import styled from "styled-components";
 import LandingImg from "../asset/landing3.png";
 import { Link } from "react-router-dom";
 import Popular from "./Popular";
+import { motion } from "framer-motion";
+
 const HomeTwo = () => {
   return (
     <div className="container">
@@ -30,11 +32,15 @@ const HomeTwo = () => {
               <div className="is-flex is-justify-content py-6 "></div>
             </div>
           </div>
-          <div className="col-md-7">
+          <motion.div
+            className="col-md-7"
+            transition={{ duration: 2 }}
+            animate={{ x: 100 }}
+          >
             <div className="hero__img">
               <img src={LandingImg} alt="Watchlist Hero" className="w-100" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </Home>
       <Popular />
