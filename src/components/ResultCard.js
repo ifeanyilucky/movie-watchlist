@@ -9,7 +9,7 @@ export const ResultCard = ({ movie }) => {
   const watchlistDisabled = storedMovie ? true : false;
 
   return (
-    <Resultcard>
+    <Resultcard className="container">
       <div>
         {movie.poster_path ? (
           <img
@@ -22,7 +22,7 @@ export const ResultCard = ({ movie }) => {
         )}
       </div>
       <div className="movie_info">
-        <h3>{movie.title}</h3>
+        <h5>{movie.title}</h5>
         <p className="text-muted">
           {movie.release_date ? movie.release_date.substring(0, 4) : <p>--</p>}
         </p>

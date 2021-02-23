@@ -26,6 +26,7 @@ const Add = () => {
 
   return (
     <div className="container pt-5">
+      <h1>{process.env.REACT_APP_API_KEY}</h1>
       <Search className="col-10 mx-auto mt-5">
         <form className="input__wrapper">
           <i className="far fa fa-search" style={{ color: "#b3c5cd" }} />
