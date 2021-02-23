@@ -36,6 +36,7 @@ const HomeTwo = () => {
             className="col-md-7"
             transition={{ duration: 2 }}
             animate={{ x: 100 }}
+            initial={false}
           >
             <div className="hero__img">
               <img src={LandingImg} alt="Watchlist Hero" className="w-100" />
