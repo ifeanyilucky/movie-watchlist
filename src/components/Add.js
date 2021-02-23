@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { ResultCard } from "./ResultCard";
-import { apiKey, searchApi } from "../config";
+
 const Add = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const onChange = (e) => {
     e.preventDefault();
     setQuery(e.target.value);
+    const apiKey = process.env.REACT_APP_API_KEY;
+    const searchApi = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&page=1&include_adult=false&query=`;
 
     fetch(searchApi + `${e.target.value}`)
       .then((res) => res.json())

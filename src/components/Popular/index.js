@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { regularApi } from "../../config.js";
 const Popular = () => {
   const [results, setResults] = useState([]);
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const regularApi = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`;
 
   fetch(regularApi)
     .then((res) => res.json())
